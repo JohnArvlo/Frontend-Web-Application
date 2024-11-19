@@ -7,20 +7,19 @@ import { MeetingManagementComponent } from './meeting/pages/meeting-management/m
 import { RecordingManagementComponent } from './meeting/components/recording-management/recording-management.component'; // Cambia TimeLine a Timeline
 import { MemberManagementComponent } from "./members/pages/member-management/member-management.component";
 import { IssuesListComponent } from './issue/pages/issues-list/issues-list.component';
-
 import { SignInComponent } from './iam/pages/sign-in/sign-in.component';
 import { SignUpComponent } from './iam/pages/sign-up/sign-up.component';
 import {authenticationGuard} from './iam/services/authentication.guard';
 import {AuthenticationSectionComponent} from './iam/components/authentication-section/authentication-section.component'
   export const routes: Routes = [
-    { path: 'statistics', component: TimelinePageComponent, canActivate: [authenticationGuard] },
+    { path: 'statistics', component: TimelinePageComponent },
     { path: 'backlog', component: BacklogPageComponent, canActivate: [authenticationGuard] },
     { path: 'backlog-items', component: BacklogItemsPageComponent, canActivate: [authenticationGuard] },
-    { path: 'members', component: MemberManagementComponent, canActivate: [authenticationGuard] },
+    { path: 'members', component: MemberManagementComponent ,canActivate: [authenticationGuard]},
     { path: 'meeting', component: MeetingManagementComponent, canActivate: [authenticationGuard] },
     { path: 'issues', component: IssuesListComponent,canActivate: [authenticationGuard] },
 
-    { path: 'recording', component: RecordingManagementComponent ,canActivate: [authenticationGuard]},
+    { path: 'recording', component: RecordingManagementComponent},
     { path: '', component: PageNotFoundComponent },
      // Asegúrate de que esta ruta esté definida
     { path: 'sign-in', component: SignInComponent },

@@ -13,8 +13,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthenticationSectionComponent } from './iam/components/authentication-section/authentication-section.component';
 import { AuthenticationService } from './iam/services/authentication.service';
-
-
+import { TranslateModule } from '@ngx-translate/core';
 
 import { Router } from '@angular/router';
 
@@ -31,7 +30,8 @@ import { Router } from '@angular/router';
     MatSidenavModule,
     LanguageSwitcherComponent,
     CommonModule,
-    AuthenticationSectionComponent
+    AuthenticationSectionComponent,
+    TranslateModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

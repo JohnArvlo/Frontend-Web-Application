@@ -12,7 +12,7 @@ import { MeetingService } from '../../services/meeting.service';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CommonModule } from '@angular/common';
 import { MeetingInfoComponent } from '../../components/meeting-info/meeting-info.component';
-
+import { RecordingManagementComponent } from '../../components/recording-management/recording-management.component';
 import { MemberService } from '../../services/member.service'; // Cambiado a MemberService
 
 
@@ -28,7 +28,7 @@ import { MemberService } from '../../services/member.service'; // Cambiado a Mem
     MeetingCreateAndEditComponent,
     MeetingInfoComponent,
     NgClass,
-    TranslateModule
+    TranslateModule,RecordingManagementComponent
   ],
   templateUrl: './meeting-management.component.html',
   styleUrls: ['./meeting-management.component.css']
@@ -72,10 +72,6 @@ export class MeetingManagementComponent implements OnInit {
     const date = new Date(dateStr);
     return isNaN(date.getTime()) ? null : date;
   }
-
-
-
-
 
   private createResource(): void {
     this.meetingService.create(this.meetingData)
@@ -137,11 +133,6 @@ export class MeetingManagementComponent implements OnInit {
   // Método para abrir un enlace
   openLink(url: string): void {
     window.open(url, '_blank');
-  }
-
-  // Método para abrir la sección de grabaciones
-  openRecordings(): void {
-    window.open('/recordings', '_blank');
   }
 
   // Lifecycle Hooks
